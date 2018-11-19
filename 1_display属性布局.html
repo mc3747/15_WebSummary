@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>display布局方式</title>
+        <style>
+          /* inline样式 */
+            .inline{display:inline; width:100px; height:100px; padding:5px; background-color:#F00;}
+
+          /* block样式 */
+            .block{display:block; width:100px; height:100px; padding:5px;background-color:#0f0;}
+
+          /* blockinline样式 */
+            .blockinline-{display:inline-block; width:100px;height:100px; padding:5px;background-color:#00f;}
+
+          /* list-item样式 */ 
+            .list-item{ display:list-item;list-style:disc outside none;}
+            
+          /* table样式 */
+            .table{
+                display: table;
+                width:100%;
+                border-collapse: collapse;/*为表格设置合并边框模型：*/
+                background-color: darkorange;
+              }
+            .tr{
+                display: table-row;
+                border-color: inherit;
+              }
+            .tr1 .td{
+                height:50px;
+                vertical-align: middle;
+              }
+            .td{
+                display: table-cell;
+                border: 1px solid;
+              }
+            .td:nth-of-type(1){
+                width: 100px;
+              }
+            .td:nth-of-type(3){
+                width: 100px;
+              }
+        </style>
+    </head>
+
+    <body>
+            <span class="inline">inline样式</span>inline
+            <span class="block">block样式</span> block
+            <span class="inline-block">inline-block样式</span>inline-block
+
+            <div style="background-color: aqua">
+                <span class="list-item">list-item样式</span>
+                <span class="list-item">111111</span>
+                <span class="list-item">222222</span>
+                <span class="list-item">333333</span>
+            </div>
+
+            <div class="table">
+                <div class="tr tr1">
+                  <div class="td">head1</div>
+                  <div class="td">head2</div>
+                  <div class="td">head3</div>
+                </div>
+                <div class="tr tr2">
+                  <div class="td">123</div>
+                  <div class="td">123</div>
+                  <div class="td">123</div>
+                </div>
+            </div>
+    </body>
+</html>
+
