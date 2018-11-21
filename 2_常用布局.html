@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2_常用布局</title>
+
+    <style>
+        .container1{
+            width: 300px;
+            height: 200px;
+            background: pink;
+            position: relative;
+        }
+        .inner1{
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -50px;
+            background: #fff;
+            text-align: center;
+        }
+        .container2{
+            width: 300px;
+            height: 200px;
+            background: rebeccapurple;
+            position: relative;
+        }
+        .inner2{
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            text-align: center;
+        }
+        .container3{
+            width: 300px;
+            height: 200px;
+            background: orange;
+            position: relative;
+            text-align: center;
+        }
+        .inner3{
+            display: inline-block;
+
+        }
+        .container4{
+            width: 250px;
+            height: 200px;
+            background: greenyellow;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+        }
+        .inner4{
+            display: inline-block;
+            width: 50px;
+            height: 150px;
+            margin: 0 auto;
+            background: #fff;
+            text-align: center;
+        }
+        .container5{
+            width: 250px;
+            height: 200px;
+            background: yellowgreen;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .inner5{
+            background: #fff;
+            width: 50px;
+            height: 150px;
+            margin-left: 10px;
+        }
+
+        .container{
+            padding: 0 200px;
+        }
+        .middle1{
+            width: 100%;
+            background: paleturquoise;
+            height: 200px;
+            float: left;
+        }
+        .left1{
+            background: palevioletred;
+            width: 200px;
+            height: 200px;
+            float: left;
+            font-size: 40px;
+            color: #fff;
+            margin-left:-100%;
+
+        }
+        .right1{
+            width: 200px;
+            height: 200px;
+            background: purple;
+            font-size: 40px;
+            float: left;
+            color: #fff;
+            margin-left:-200px;
+
+        }
+
+
+      .middle-container{
+            width: 100%;
+            background: paleturquoise;
+            height: 200px;
+            float: left;
+
+        }
+
+        .middle2{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        .left2{
+            background: rgb(112, 136, 216);
+            width: 200px;
+            height: 200px;
+            float: left;
+            font-size: 40px;
+            color: #fff;
+            margin-left:-100%;
+
+
+        }
+        .right2{
+            width: 200px;
+            height: 200px;
+            background: rgb(128, 0, 53);
+            font-size: 40px;
+            float: left;
+            color: #fff;
+            margin-left:-200px;
+
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+        <div class="container1">
+               <div class="inner1">水平居中1-固定宽度</div>
+        </div>
+
+        <div class="container2">
+            <div class="inner2">水平居中2-固定宽度</div>
+         </div>    
+
+         <div class="container3">
+            <div class="inner3">水平居中3-未知宽度</div>
+         </div> 
+
+         <div class="container4">
+            <div class="inner4">水平居中4-多个元素水平居中</div>
+         </div> 
+
+         <div class="container5">
+            <div class="inner5">水平居中5-flex布局</div>
+         </div> 
+
+         <div class="container">
+            <div class="middle1">圣杯结构：测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</div>
+            <div class="left1">left</div>
+            <div class="right1">right</div>
+        </div>
+        
+        <div class="container">
+            <div class="middle-container">
+                <div class="middle2">双飞翼结构：测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</div>
+        
+            </div>
+            <div class="left2">left</div>
+            <div class="right2">right</div>
+        </div>
+        
+        
+</body>
+</html>
