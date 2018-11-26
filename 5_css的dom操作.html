@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id="p1">Hello World!</p>
+<p id="p2">Hello World!</p>
+
+
+
+<!-- */ 3，动态触发修改html的样式1-->
+<h1 id="id1">我的标题 1</h1>
+<button id="button" >
+        点我!</button>
+<button id="button1" onclick="document.getElementById('button1').style.color ='green'">
+点我!</button>
+
+<p id="p3">这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。</p>
+<input type="button" value="隐藏文本" onclick="document.getElementById('p3').style.visibility='hidden'" />
+<input type="button" value="显示文本" onclick="document.getElementById('p3').style.visibility='visible'" />
+
+<script>
+// 1,静态直接修改html的样式
+    document.getElementById("p2").style.color="blue";
+    document.getElementById("p2").style.fontFamily="Arial";
+    document.getElementById("p2").style.fontSize="larger";
+
+// 2，动态触发修改html的样式2
+    var iNum = 0;
+    var h1=document.getElementById('id1');
+    var btn1=document.getElementById('button');
+    btn1.onclick=function(){
+            h1.style.color=bg1();
+             iNum++;
+         };
+        
+    function bg1(){
+        sColor = ['red','blue','yellow','green'];
+        return sColor[iNum % sColor.length]; 
+    }
+
+</script>
+<p>以上段落通过脚本修改。</p>
+
+
+</body>
+</html>
