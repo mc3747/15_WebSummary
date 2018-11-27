@@ -25,6 +25,14 @@ style="background-color:rgb(217, 56, 190);width:120px;height:20px;padding:40px;"
 <button id="myBtn2">添加事件句柄1</button>
 <button id="myBtn3">添加事件句柄2</button>
 <button id="myBtn4">同一个元素添加多个不同事件</button>
+<button id="myBtn5">事件传递参数</button>
+<div id="myDiv" style="background-color:aquamarine">
+	<p id="myP">冒泡演示：先内后外</p>
+</div><br>
+<div id="myDiv2" style="background-color:gold;">
+	<p id="myP2">捕获演示：先外后内 </p>
+</div>
+
 <script>
         // 1，onClick事件
     function displayDate(){
@@ -94,6 +102,35 @@ style="background-color:rgb(217, 56, 190);width:120px;height:20px;padding:40px;"
           window.addEventListener("resize", function(){
             document.getElementById("demo3").innerHTML = 'asdfasd';
         });
+
+        var p1 = 5;
+        var p2 = 7;
+        document.getElementById("myBtn5").addEventListener("click", function() {
+            myFunction3(p1, p2);
+        });
+        function myFunction3(a, b) {
+            var result = a * b;
+            document.getElementById("demo3").innerHTML = result;
+        }
+
+        /*
+        9，事件的冒泡：内部元素的事件会先被触发，然后再触发外部元素
+           事件的捕获，外部元素的事件会先被触发，然后才会触发内部元素的事件
+        */ 
+        document.getElementById("myP").addEventListener("click", function() {
+            alert("你点击了 P 元素!");
+        }, false);
+        document.getElementById("myDiv").addEventListener("click", function() {
+            alert(" 你点击了 DIV 元素 !");
+        }, false);
+        document.getElementById("myP2").addEventListener("click", function() {
+            alert("你点击了 P2 元素!");
+        }, true);
+        document.getElementById("myDiv2").addEventListener("click", function() {
+            alert("你点击了 DIV2 元素 !");
+        }, true);
+
+        
 </script>
 </body>
 </html>
