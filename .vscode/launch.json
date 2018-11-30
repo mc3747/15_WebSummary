@@ -9,7 +9,6 @@
                 "type": "chrome",
                 "request": "attach",
                 "name": "Attach浏览器",
-                // "url": "${file}",//修改这里，每次调试当前文件
                 "port": 8088,
                 "webRoot": "${workspaceFolder}/demo1.js",
                 "sourceMaps": true,

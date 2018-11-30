@@ -6,6 +6,8 @@ function loadXMLDoc()
     {
         //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
         xmlhttp=new XMLHttpRequest();
+        console.log('测试代码');
+        
     }
     else
     {
@@ -19,6 +21,6 @@ function loadXMLDoc()
             document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","www.baidu.com",true);
+    xmlhttp.open("GET","http://www.baidu.com",true);
     xmlhttp.send();
 }
