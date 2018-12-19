@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>元素和文本对齐</title> 
+<style>
+.center1 {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+.center2 {
+    text-align: center;
+    border: 3px solid green;
+}
+.center3 {
+    display: block;
+    margin: 0 auto;
+}
+.right1 {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+.right2 {
+    float: right;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+.imgRight {
+    border: 3px solid #4CAF50;
+    padding: 5px;
+}
+.img1 {
+    float: right;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.img2 {
+    float: right;
+}
+.center4 {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+}
+.center5 {
+    line-height: 200px;
+    height: 200px;
+    border: 3px solid green;
+    text-align: center;
+}
+
+.center5 p {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+.center6 { 
+    height: 200px;
+    position: relative;
+    border: 3px solid green; 
+}
+
+.center6 p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<p>1,元素水平居中：块级元素 (如 div), 可以使用 margin: auto;</p>
+<div class="center1">
+  <p><b>注意: </b>使用 margin:auto 无法兼容 IE8, 除非 !DOCTYPE 已经声明。</p>
+</div>
+
+<p>2,文本水平居中：使用 text-align: center</p>
+<div class="center2">
+    <p>文本居中对齐。</p>
+</div>
+
+<p>3,图片水平居中：要让图片居中对齐, 可以使用 margin: auto; 并将它放到块元素中：</p>
+<img class="center3" src="http://i.imgur.com/zkaAooq.jpg" alt="Paris" style="width:40%">
+
+<p>4，position实现右对齐:</p>
+<div class="right1">
+  <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！</p>
+</div>
+
+<p>5，float 属性来实现右对齐:</p>
+<div class="right2">
+  <p>我老爹在小时候给我的一些人生建议，我现在还记忆深刻。</p>
+</div>
+
+
+<p>6，图片包含在标签中右对齐</p>
+<p>❎以下实例图在父元素中溢出，很不美观:</p>
+<div class="imgRight">
+    <img class="img1" src="http://i.imgur.com/zkaAooq.jpg" alt="Pineapple" width="170" height="170">
+    菜鸟教程 - 学的不仅是技术，更是梦想！！！
+</div>
+
+<p >✅在父元素上通过添加 clearfix 类，并设置 overflow: auto; 来解决该问题:</p>
+<div class="imgRight clearfix">
+    <img class="img2" src="http://i.imgur.com/zkaAooq.jpg" alt="Pineapple" width="170" height="170">
+    菜鸟教程 - 学的不仅是技术，更是梦想！！！
+</div>
+
+<p>7，使用 padding 属性实现元素的垂直居中：</p>
+<div class="center4">
+  <p>我是垂直居中的。</p>
+</div>
+
+<p>8，使用line-height 属性值和 height 属性值相等来设置 div 元素居中：</p>
+<div class="center5">
+  <p>我是垂直居中的。</p>
+</div>
+
+<p>9，使用了 positioning 和 transform 属性来设置水平和垂直居中：</p>
+<div class="center6">
+  <p>我是水平和垂直居中的。</p>
+</div>
+
+
+
+
+
+
+</body>
+</html>
