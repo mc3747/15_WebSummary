@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wrap,
+			.circle,
+			.num {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+			}
+
+			.wrap {
+				position: relative;
+				border: 10px solid #ccc;
+				box-sizing: border-box;
+			}
+
+			.circle {
+				position: absolute;
+				top: -10px;
+				left: -10px;
+				box-sizing: border-box;
+			}
+
+			.circle div {
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				box-sizing: border-box;
+				border-radius: 50%;
+			}
+
+			.num {
+				position: absolute;
+				top: -10px;
+				left: -10px;
+				line-height: 200px;
+				text-align: center;
+				font-size: 50px;
+			}
+
+			.left {
+				clip: rect(0, 100px, 200px, 0);
+				border: 10px solid #f00;
+			}
+
+			.right {
+				clip: rect(0, 200px, 200px, 100px);
+				border: 10px solid #f00;
+			}
+
+			input[type=checkbox] {
+				margin-right: 5px;
+				cursor: pointer;
+				font-size: 14px;
+				width: 15px;
+				height: 15px;
+				position: relative;
+			}
+
+			input[type=checkbox]:after {
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				top: 0;
+				content: " ";
+				background-color: #ff0000;
+				color: #fff;
+				display: inline-block;
+				visibility: visible;
+				padding: 0px;
+				border-radius: 3px;
+			}
+
+			input[type=checkbox]:checked:after {
+				content: "✅";
+				font-size: 14px;
+			}
+
+			input[type=radio] {
+				margin-right: 5px;
+				cursor: pointer;
+				font-size: 14px;
+				width: 15px;
+				height: 12px;
+				position: relative;
+			}
+
+			input[type=radio]:after {
+				position: absolute;
+				width: 10px;
+				height: 15px;
+				top: 0;
+				content: " ";
+				background-color: #ff0000;
+				color: #fff;
+				display: inline-block;
+				visibility: visible;
+				padding: 0px 3px;
+				border-radius: 50%;
+			}
+
+			input[type=radio]:checked:before {
+				content: "✓";
+				display: block;
+				position: relative;
+				top: -2px;
+				left: 3px;
+				width: 6px;
+				height: 6px;
+				color: #fff;
+				font-weight: 400;
+				z-index: 1;
+			}
+		</style>
+	</head>
+
+
+	<body>
+		<div id="box"></div>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<input type="checkbox" name="method" value="plus" checked>plus<br>
+		<input type="checkbox" name="method" value="minus">minus<br>
+		<input type="radio" name="method" value="plus">plus<br>
+		<input type="radio" name="method" value="minus" checked>minus<br>
+
+	</body>
+
+
+</html>
+<script type="text/javascript">
+	function Yuan(id, num) {
+		this.box = document.getElementById(id); //获取节点
+		this.box.className = 'wrap';
+
+		//创建节点circle
+		this.circle = document.createElement("div");
+		this.circle.className = "circle";
+		this.box.appendChild(this.circle);
+
+		//创建circle的子节点left
+		this.left = document.createElement("div");
+		this.left.className = "left";
+		this.circle.appendChild(this.left);
+
+		//创建circle的子节点right
+		this.right = document.createElement("div");
+		this.right.className = "right";
+		this.circle.appendChild(this.right);
+
+		//创建节点num
+		this.num = document.createElement("div");
+		this.num.className = "num";
+		this.box.appendChild(this.num);
+		this.num.innerHTML = '<span id="">' + num + '</span>%';
+
+		this.jz(num);
+	}
+
+	Yuan.prototype.jz = function(num) {
+		var i = 0;
+		var that = this;
+		var int = setInterval(function() {
+			that.gx(num / 10 * i);
+			i++;
+			if (i > 10) {
+				clearInterval(int)
+			}
+		}, 500);
+	}
+
+	Yuan.prototype.gx = function(n) {
+
+		if (n <= 50) {
+			this.right.style.display = 'none';
+			this.circle.style.clip = 'rect(0, 200px, 200px, 100px)';
+		} else {
+			this.right.style.display = 'block';
+			this.circle.style.clip = 'rect(auto, auto, auto, auto)';
+		}
+		this.left.style.transform = 'rotate(' + n * 360 / 100 + 'deg)';
+
+	}
+
+	function checkboxChecked(t) {
+		if (t.checked == true) {
+			$(t).next().show();
+		} else {
+			$(t).next().hide();
+		}
+	}
+	var box = new Yuan('box', 25);
+	var box1 = new Yuan('box1', 100);
+	var box2 = new Yuan('box2', 75);
+	var box3 = new Yuan('box3', 66);
+</script>
