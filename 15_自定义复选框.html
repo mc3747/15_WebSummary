@@ -26,9 +26,34 @@
 	<body>
 
 		<input type="checkbox" />
+		<!-- onmouseover="this.src='./img/common_checkBox_selected@2x.png'" 
+		onmouseout="this.src='./img/common_checkBox@2x.png'" -->
+		<img src="./img/common_checkBox@2x.png" onclick="this.src='./img/common_checkBox_selected@2x.png'" id='clickImage'
+		 style="width:30px;height:30px;" />
+		<input name="meinv" type='button' value="改变图片" onclick="changeImage()">
 
+		<p>创建图片链接:
+			<a href="//www.baidu.com.html">
+				<img border="10" src="./img/common_checkBox@2x.png" alt="HTML 教程" width="32" height="32"></a></p>
+
+		<p>无边框的图片链接:
+			<a href="//www.baidu.com.html">
+				<img border="0" src="./img/common_checkBox_selected@2x.png" alt="HTML 教程" width="32" height="32"></a></p>
 	</body>
 </html>
-<script type="text/javascript">
 
+
+
+<script type="text/javascript">
+	console.log('✅测试');
+
+	function changeImage() {
+		console.log('✅测试');
+		let imageElement = document.getElementById("clickImage");
+		if (imageElement.src == "./img/common_checkBox_selected@2x.png") {
+			imageElement.src = "./img/common_checkBox@2x.png";
+		} else {
+			imageElement.src = "./img/common_checkBox_selected@2x.png";
+		};
+	}
 </script>
