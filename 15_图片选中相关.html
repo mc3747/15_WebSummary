@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="referrer" content="no-referrer" />
+		<title></title>
+		<style type="text/css">
+			input[type='checkbox'] {
+				width: 22px;
+				height: 22px;
+				background-color: #fff;
+				-webkit-appearance: none;
+				border: 0.5px solid #23a0bf;
+				border-radius: 2px;
+				outline: none;
+				cursor: pointer;
+				background: url(/img/normal.png)no-repeat top center;
+			}
+
+			input[type='checkbox']:checked {
+
+				background: url("./img/selected.png")no-repeat center;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 1，更改图片 -->
+		<!-- onmouseover="this.src='./img/common_checkBox_selected@2x.png'" 
+		onmouseout="this.src='./img/common_checkBox@2x.png'"
+		 图片本身的事件onclick="this.src='./img/common_checkBox_selected@2x.png'"
+		 -->
+		<!-- 方法1：标签内部 -->
+		<img src="./img/common_checkBox@2x.png"  onclick="this.src='./img/common_checkBox_selected@2x.png'" style="width:30px;height:30px;" />
+
+		<!-- 方法2：标签外部js -->
+		<img src="./img/common_checkBox@2x.png" id='localImage' onclick="changeLocalImage()" style="width:30px;height:30px;" />
+		<input type='button' value="改变本地图片" onclick="changeLocalImage()">
+		
+		<img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" id='onlineImage' style="width:50px;height:50px;" />
+		<input type='button' value="改变网络图片" onclick="changeOnlineImage()">
+		
+		<!-- 方法3：input设置背景图片 -->
+		<input type="checkbox" />
+
+		<!-- 2，图片链接 -->
+		<p>创建图片链接:
+			<a href="//www.baidu.com.html">
+				<img border="10" src="./img/common_checkBox@2x.png" alt="HTML 教程" width="32" height="32"></a></p>
+
+		<p>无边框的图片链接:
+			<a href="//www.baidu.com.html">
+				<img border="0" src="./img/common_checkBox_selected@2x.png" alt="HTML 教程" width="32" height="32"></a></p>
+
+		<!-- 3，更改图片间隙 -->
+		<!-- 方法：
+		 1，父类的font-size: 0px;
+		 2，自己的vertical-align: middle;
+		 3，自己的display: block;
+		 -->
+		<div style="background-color: aquamarine;width: 30px;height: 30px;">
+			<img src="./img/selected.png" style="width: 30px;height: 30px;">
+		</div>
+
+		<!-- 4,图片选中 -->
+		<input type="image" src="img/normal.png" />
+
+
+	</body>
+</html>
+
+
+
+<script type="text/javascript">
+	var b = 1;
+	// 切换本地图片 
+	// 方法1:通过一个第三方变量
+	// 方法2:src是否包含图片字符
+	function changeLocalImage() {
+		console.log('✅测试本地');
+		let imageElement = document.getElementById("localImage");
+
+		let src = imageElement.src;
+		if (src.indexOf("common_checkBox@2x.png") != -1) {
+
+			imageElement.src = "./img/common_checkBox_selected@2x.png";
+
+		} else {
+			imageElement.src = "./img/common_checkBox@2x.png";
+
+		};
+	}
+
+	function changeOnlineImage() {
+		// 改变网络图片,需要设置顶部的meta,否则图片显示不出来
+		console.log('✅测试网络');
+		let imageElement = document.getElementById("onlineImage");
+		if (imageElement.src == "http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg") {
+			imageElement.src = "http://image.zhangxinxu.com/image/study/s/s256/mm2.jpg";
+		} else {
+			imageElement.src = "http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg";
+		};
+	}
+</script>
