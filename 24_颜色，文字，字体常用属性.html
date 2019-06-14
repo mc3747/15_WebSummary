@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		.backgroundImage {
+			height: 100px;
+			width: 300px;
+			background-color: #23A0BF;
+			background-image: url('http://image.zhangxinxu.com/image/study/s/s256/mm3.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: 30% 20%;
+		}
+
+		.decorateText {
+			text-decoration: line-through;
+		}
+	</style>
+
+	<body>
+		<!-- 1，背景颜色，背景图片 ：background-color和background-image
+		background-color
+		background-image
+		background-repeat：repeat-x，repeat-y，no-repeat，不设置就是x，y均平铺
+		background-attachment：是否随页面滚动fixed，scroll，inherit
+		background-position：背景图片的位置：x轴right y轴top（也可以是百分比）
+		-->
+		<div class="backgroundImage">
+			背景图片
+		</div>
+
+		<!-- 2，文字属性
+		文字颜色 color
+		文字对齐 text-align：left，right，center，justify（两端对齐，微调使左右齐线）
+		行高		line-height
+		字符间距 letter-spacing
+		文字间距 word-spacing
+		缩进		text-indent
+		字母大小写 text-transform：capitalize（首字母大写）
+		文本装饰 text-decoration
+			none	默认。定义标准的文本。
+			underline	定义文本下的一条线。
+			overline	定义文本上的一条线。
+			line-through	定义穿过文本下的一条线。
+			blink	定义闪烁的文本。
+		文本阴影 text-shadow
+		空格处理方式 white-space
+			normal	默认。空白会被浏览器忽略。
+			pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+			nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+			pre-wrap	保留空白符序列，但是正常地进行换行。
+			pre-line	合并空白符序列，但是保留换行符。
+		-->
+
+		<!-- 3，文字字体 
+		字体系列font-family：三种系列Serif（具体Times New Roman
+				Georgia），Sans-serif，Monospace（等宽高）
+
+		字体样式font-style：normal正常，italic斜体，oblique另外斜体
+		
+		字体大小font-size
+		
+		字体加粗font-weight：lighter bold bolder，还可以设置100~900的字符
+		
+		小型大写字母显示 font-variant ：normal和small-caps
+		
+		-->
+		<h1 style="font-size: 10pt;">pt字体</h1>
+		<h1 style="font-size: 10px;">px字体</h1>
+		<h1 style="font-size: 1em;">em字体</h1>
+		<h1 style="font-size: 1rem;">rem字体</h1>
+		<h1 style="font-size: 100%;">百分比字体</h1>
+
+		<div style="font-weight: 900;">
+			加粗的文字
+		</div>
+		
+		<div style="background-color: #4CAF50;">
+			<p style="text-transform:uppercase;">所有大写My name is Hege Refsnes.</p>
+			<p style="text-transform:lowercase;">所有小写My name is Hege Refsnes.</p>
+			<p style="text-transform:capitalize;">首字母大写My name is Hege Refsnes.</p>
+			<p style="font-variant:normal;">正常大小写My name is Hege Refsnes.</p>
+			<p style="font-variant:small-caps;">小型大小写My name is Hege Refsnes.</p>
+		</div>
+		
+		
+		<!-- 3，文字 -->
+	</body>
+</html>

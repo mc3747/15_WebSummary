@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body onload="load()" onunload="unload()" onresize='resize()'>
+		
+		<!-- 1，window事件：需要写在 <body> 标签 -->
+		<div id="divDemo">
+			aa
+		</div>
+		<!-- 2，form事件 -->
+		
+		<!-- 3，键盘事件 -->
+		
+		<!-- 4，鼠标事件 -->
+		
+		<!-- 5，多媒体事件 -->
+	</body>
+</html>
+
+<script>
+function load()
+{
+	console.log('文档开始加载✅');
+}
+function unload()
+{
+	console.log('文档下载完毕✅');
+}
+function resize()
+{
+console.log('窗口大小改变✅'+ window.innerWidth)
+}
+// window.onload=function(){ 
+//     console.log("🍎window加载完成！"); 
+// }
+(document.getElementById("divDemo")).ready=function(){ 
+    console.log("🍎document加载准备！"); 
+}
+(document.getElementById("divDemo")).onload=function(){ 
+    console.log("🍎document加载完成！"); 
+}
+</script>

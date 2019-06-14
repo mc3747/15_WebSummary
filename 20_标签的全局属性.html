@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		#div1,
+		#div2 {
+			float: left;
+			width: 100px;
+			height: 35px;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #aaaaaa;
+		}
+	</style>
+	<body>
+		<!-- 1，id -->
+		<!-- 2，class -->
+		<!-- 3，style -->
+		<!-- 4，data-* 属性可以在所有的 HTML 元素中嵌入数据，传递数据 
+				属性名不要包含大写字母，在 data- 后必须至少有一个字符。
+				该属性可以是任何字符串-->
+		<ul>
+			<li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+			<li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+			<li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+		</ul>
+
+		<!-- 5，draggable拖放属性：true或者false -->
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" draggable="true" ondragstart="drag(event)" id="drag1"
+			 width="88" height="31"></div>
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+		<!-- 6，hidden属性： hidden 属性；隐藏时候 <element hidden="hidden">.显示的时候删除该属性-->
+		<img src="http://image.zhangxinxu.com/image/study/s/s256/mm2.jpg" id="toggle" width="88" height="31"></div>
+		<input type="button" value="隐藏图片" id="toggleInput" onclick="toggleHidden()" />
+		<br>
+		<!-- 7,lang :语言 lang="en" en英文，zh中文-->
+
+		<!-- 8，title  些信息通常会在鼠标移到元素上时显示一段工具提示文本（tooltip text）-->
+		<p title="✅这个更加牛逼✅">这个相当牛逼</p>
+
+	</body>
+</html>
+
+<script type="text/javascript">
+	function showDetails(animal) {
+		var animalType = animal.getAttribute("data-animal-type");
+		alert("The " + animal.innerHTML + " is a " + animalType + ".");
+	}
+
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("Text", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+
+	function toggleHidden() {
+		console.log('隐藏');
+		var elem = document.getElementById('toggle');
+		if (elem.hasAttribute('hidden')) {
+			elem.removeAttribute('hidden')
+		} else {
+			elem.setAttribute('hidden', 'hidden')
+		};
+		var elem2 = document.getElementById('toggleInput');
+		if (elem2.value == "隐藏图片") {
+			elem2.value = "显示图片"
+		} else {
+			elem2.value = "隐藏图片"
+		};
+	}
+</script>
