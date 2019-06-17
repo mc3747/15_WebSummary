@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 每个a标签后边添加其url */
+			a:after {
+				content: " ("attr(href)")  ";
+			}
+
+			#div1 {
+				position: absolute;
+				left: 50px;
+				width: calc(100% - 100px);
+				border: 1px solid black;
+				background-color: yellow;
+				padding: 5px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 1，attr() 函数返回选择元素的属性值：attr(attribute-name) -->
+		<p><a href="//www.runoob.com">菜鸟教程</a></p>
+		<p><a href="//www.runoob.com/html/">HTML 教程</a></p>
+
+		<div id="div1">一些文本...</div>
+	</body>
+</html>

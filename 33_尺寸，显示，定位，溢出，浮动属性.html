@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 1，尺寸
+		 height
+		 max-height
+		 min-height
+		 line-height：px，百分比，数字（字体的整数倍）三种方式
+		 -->
+		 
+		 <!-- 2，display属性
+		  display：none和visibility:hidden区别（前者没有占位，后者还有占位）
+		  inline，block
+		  -->
+		  
+		  <!-- 3，定位属性：position
+		    1、absolute(绝对定位)，其位置相对于最近已定位的父元素，如果元素没有已定位的父元素那么它的位置相对于
+			2、static(默认的静态定位)，即没有定位，遵循正常的文档流对象，静态定位的元素不受top、left、right、bottom影响。
+			3、relative(相对定位)，其位置相对其正常时的位置。相对定位元素经常被用来作为绝对定位元素的容器块。
+			4、fixed，元素的位置相对于浏览器窗口，是固定位置。即使窗口是滚动的它也不会移动。
+			5、sticky(粘性定位)，基于用户滚动位置来定位，在未滚动出目标区域时，它的行为就像position:relative;它的表现就像 position:fixed;，它会固定在目标位置。元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。
+这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同
+		   
+		   -->
+		   <div id=""; style='left: 100px;right: 100px;position:absolute'>
+		   	absolute绝对定位
+		   </div>
+		   <div id=""  style='border: 3px solid #73AD21;position:static'>
+		   	static静态定位
+		   </div>
+		   <div id=""  style='left: 100px;position:relative'>
+		   	relative相对定位
+		   </div>
+		   <div id=""  style='top: 100px;right: 5px;position:fixed'>
+		   	fixed固定定位
+		   </div>
+		   
+		<!-- 4，overflow 
+		包括overflow-x和overflow-y
+		visible	默认值。内容不会被修剪，会呈现在元素框之外。
+		hidden	内容会被修剪，并且其余内容是不可见的。
+		scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+		auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+		-->
+		
+		
+		<!-- 2，可伸缩属性
+		 
+		 -->
+	</body>
+</html>

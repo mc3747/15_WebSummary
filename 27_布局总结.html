@@ -4,6 +4,56 @@
 		<meta charset="utf-8">
 		<title></title>
 	</head>
+	<style type="text/css">
+		h2.pos_static {
+			position: static;
+			border: 3px solid #73AD21;
+			background-color: #cornflowerblue
+		}
+
+		h2.pos_abs {
+			position: absolute;
+			background-color: #4CAF50;
+			left: 100px;
+			top: 150px;
+		}
+
+		h2.pos_relative {
+			position: relative;
+			left: 20px;
+			background-color: #FF8C00;
+		}
+
+		h2.pos_fixed {
+			position: fixed;
+			top: 30px;
+			right: 5px;
+			background-color: #FFCC00;
+		}
+
+		h2.pos_sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 100px;
+			padding: 5px;
+			background-color: #cae8ca;
+			border: 2px solid #4CAF50;
+		}
+	</style>
 	<body>
+		<!-- 5种点位方式 -->
+		<h2 class="pos_static">静态定位static，默认文档流：没有定位</h2>
+		<h2 class="pos_abs">绝对定位absolute：相对父元素</h2>
+		<h2 class="pos_relative">相对定位relative：相对自己</h2>
+		<h2 class="pos_fixed">固定定位fixed：相对浏览器</h2>
+		<h2 class="pos_sticky">粘性定位sticky：相对上下滚动</h2>
+		<div style="padding-bottom:2000px">
+			<p>滚动我</p>
+			<p>来回滚动我</p>
+			<p>滚动我</p>
+			<p>来回滚动我</p>
+			<p>滚动我</p>
+			<p>来回滚动我</p>
+		</div>
 	</body>
 </html>
