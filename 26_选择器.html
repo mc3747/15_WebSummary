@@ -3,7 +3,130 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<style type="text/css">
+			/* 1,id选择器：唯一，js识别使用 */
+			#id {}
+
+			/* 2,class选择器：html可以绑定多个class*/
+			.class {}
+
+			/* 3,元素选择器 */
+			p {}
+
+			/* 4,元素并集选择器 */
+			p,
+			h1 {}
+
+			/* 5,后代选择器（儿子，或者孙子，后代都可以） ：选择<div>元素内的所有<p>元素*/
+			div p {}
+
+			/* 6,子元素选择器（儿子） ：选择所有父级是 <div> 元素的 <p> 元素*/
+			div>p {}
+
+			/* 7,兄弟元素选择器（紧挨着） ：选择所有紧接着<div>元素之后的<p>元素*/
+			div+p {}
+
+			/* 8,交集选择器（中间没有分割） ：同时具备两个选择器*/
+			.class#id {}
+
+			/* 9,并集选择器（都逗号分割） ：任选其中一个选择器*/
+			.class,
+			#id {}
+
+			/* 10,属性选择器(写了该属性) ：选择所有带有target属性元素*/
+			a[target] {}
+
+			/* 11,属性选择器（等于该属性值） ：*/
+			a[target=_blank] {}
+
+			/* 12,属性选择器（包含该属性值） ：*/
+			a[target~=_blank] {}
+
+			/* 13,属性选择器（以该属性值开头） ：*/
+			a[target|=_blank] {}
+
+			/* 14，hover选择器（鼠标移到链接上时添加的特殊样式） */
+			a.hover:hover {
+				background-color: yellow;
+			}
+
+			/* 15，focus选择器（选择具有焦点的元素） */
+			input:focus {
+				background-color: yellow;
+			}
+
+			/* 16，active选择器（向活动的链接添加特殊的样式） */
+			a.active:active {
+				background-color: yellow;
+			}
+
+			/* 注意a标签的4个样式顺序：link，visited，hover，active（记忆方法love hate 爱恨原则）
+	由于IDE，没有浏览器的历史记录功能
+ */
+			/* 17，link（未访问的链接添加样式） */
+			a.click:link {
+				background-color: red;
+			}
+
+			/* 18，visited（已访问的链接添加样式） */
+			a.click:visited {
+				background-color: yellow;
+			}
+
+			a.click:hover {
+				background-color: green;
+			}
+
+			a.click:active {
+				background-color: purple;
+			}
+
+			/* 19，first-child选择器：匹配其父元素中的第一个子元素 */
+			p:first-child {
+				background-color: yellow;
+			}
+
+			/* 20，before选择器：便签之前添加 */
+			p.before:before {
+				content: "前缀✅";
+			}
+
+			/* 21，after选择器，标签之后添加 */
+			p.after:after {
+				content: "✅后缀";
+			}
+
+			/* 22，lang选择器，有指定 lang 属性开始的元素添加样式 */
+			p:lang(it) {
+				background: yellow;
+			}
+		</style>
 	</head>
 	<body>
+		<p>This paragraph is not the first child of its parent.</p>
+
+		<div id="id">
+
+		</div>
+		<a class="hover" href="//www.baidu.com/">我是百度</a>
+		<form>
+			First name: <input type="text" name="firstname" /><br>
+			Last name: <input type="text" name="lastname" />
+		</form>
+		<a class="active" href="//www.baidu.com/">我是百度，我有点击颜色</a>
+		<br>
+		<a class="click" href="//www.baidu.com/">我是百度</a>
+		<a class="click" href="//www.jd.com/">我是京东</a>
+		<p>This paragraph is the first child of its parent (body).</p>
+
+		<div>
+			<p>This paragraph is the first child of its parent (div).</p>
+			<p>This paragraph is not the first child of its parent.</p>
+		</div>
+
+		<p class="before">我要添加前缀</p>
+		<p class="after">我要添加后缀</p>
+		<p lang="it">我的lang属性是 ‘it’，我是黄色</p>
+
 	</body>
 </html>

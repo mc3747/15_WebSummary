@@ -2,8 +2,309 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
 		<title></title>
+		<style>
+			a {
+				display: inline-block;
+				border: 10px solid #ddd;
+				border-radius: 4px;
+				padding: 5px;
+				transition: 0.3s;
+			}
+
+			a:hover {
+				box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+			}
+
+			img.fixed {
+				max-width: 100%;
+				height: auto;
+			}
+
+			.container {
+				position: relative;
+				left: 20px;
+			}
+
+			.topleft {
+				position: absolute;
+				top: 8px;
+				left: 16px;
+				font-size: 18px;
+			}
+
+			.topright {
+				position: absolute;
+				top: 8px;
+				right: 16px;
+				font-size: 18px;
+			}
+
+			.bottomleft {
+				position: absolute;
+				bottom: 8px;
+				left: 16px;
+				font-size: 18px;
+			}
+
+			.bottomright {
+				position: absolute;
+				bottom: 8px;
+				right: 16px;
+				font-size: 18px;
+			}
+
+			.center {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				text-align: center;
+				font-size: 18px;
+				margin-top: -9px;
+			}
+
+			img.text {
+				width: 100%;
+				height: auto;
+				opacity: 0.3;
+			}
+/* 图片相册 */
+			div.img {
+				border: 1px solid #ccc;
+			}
+
+			div.img:hover {
+				border: 1px solid #777;
+			}
+
+			div.img img {
+				width: 100%;
+				height: auto;
+			}
+
+			div.desc {
+				padding: 15px;
+				text-align: center;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			.responsive {
+				padding: 0 6px;
+				float: left;
+				width: 24.99999%;
+			}
+
+			@media only screen and (max-width: 700px) {
+				.responsive {
+					width: 49.99999%;
+					margin: 6px 0;
+				}
+			}
+
+			@media only screen and (max-width: 500px) {
+				.responsive {
+					width: 100%;
+				}
+			}
+
+			.clearfix:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			/* 图片放大 */
+			#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+		</style>
 	</head>
 	<body>
+		<!-- 1，图片利用border来缩小，可点击， -->
+		<a target="_top" href="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+			<img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" alt="Paris" width="400" height="300">
+		</a>
+
+		<!--2，利用max-width和height：auto来自动适配各种尺寸的屏幕  -->
+		<img class="fixed" src="//www.runoob.com/wp-content/uploads/2016/04/trolltunga.jpg" <!-- 3，给图片添加文本 -->
+
+		<!-- 3，图片和文字搭配 -->
+		<div class="container">
+			<img class="text" src="//www.runoob.com/wp-content/uploads/2016/04/trolltunga.jpg" alt="Norway" width="1000" height="300">
+			<div class="topleft">左上角</div>
+			<div class="topright">右上角</div>
+			<div class="bottomleft">左下角</div>
+			<div class="bottomright">右下角</div>
+			<div class="center">居中</div>
+		</div>
+		<!-- 4，滤镜属性filter -->
+
+		<!-- 5，响应式图片相册：适配屏幕大小 -->
+
+		<h2 style="text-align:center">响应式图片相册</h2>
+
+		<div class="responsive">
+			<div class="img">
+				<a target="_blank" href="img_fjords.jpg">
+					<img src="//www.runoob.com/wp-content/uploads/2016/04/img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
+				</a>
+				<div class="desc">Add a description of the image here</div>
+			</div>
+		</div>
+
+
+		<div class="responsive">
+			<div class="img">
+				<a target="_blank" href="img_forest.jpg">
+					<img src="//www.runoob.com/wp-content/uploads/2016/04/img_forest.jpg" alt="Forest" width="600" height="400">
+				</a>
+				<div class="desc">Add a description of the image here</div>
+			</div>
+		</div>
+
+		<div class="responsive">
+			<div class="img">
+				<a target="_blank" href="img_lights.jpg">
+					<img src="//www.runoob.com/wp-content/uploads/2016/04/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+				</a>
+				<div class="desc">Add a description of the image here</div>
+			</div>
+		</div>
+
+		<div class="responsive">
+			<div class="img">
+				<a target="_blank" href="img_mountains.jpg">
+					<img src="//www.runoob.com/wp-content/uploads/2016/04/img_mountains.jpg" alt="Mountains" width="600" height="400">
+				</a>
+				<div class="desc">Add a description of the image here</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div style="padding:6px;">
+
+			<!-- 6，点击图片放大 -->
+			<h2>图片模态框：点击放大图片</h2>
+			<img id="myImg" src="//www.runoob.com/wp-content/uploads/2016/04/img_lights.jpg" alt="Northern Lights, Norway" width="300"
+			 height="200">
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<span class="close">×</span>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+
 	</body>
 </html>
+<script type="text/javascript">
+	// 获取模态窗口
+	var modal = document.getElementById('myModal');
+
+	// 获取图片模态框，alt 属性作为图片弹出中文本描述
+	var img = document.getElementById('myImg');
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	img.onclick = function() {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		modalImg.alt = this.alt;
+		captionText.innerHTML = this.alt;
+	}
+
+	// 获取 <span> 元素，设置关闭模态框按钮
+	var span = document.getElementsByClassName("close")[0];
+
+	// 点击 <span> 元素上的 (x), 关闭模态框
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+</script>
