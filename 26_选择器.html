@@ -30,8 +30,7 @@
 			.class#id {}
 
 			/* 9,并集选择器（都逗号分割） ：任选其中一个选择器*/
-			.class,
-			#id {}
+			.class,#id {}
 
 			/* 10,属性选择器(写了该属性) ：选择所有带有target属性元素*/
 			a[target] {}
@@ -100,6 +99,47 @@
 			p:lang(it) {
 				background: yellow;
 			}
+
+			/* 23，两个类选择器中间没有空格：多类选择器
+					两个类选择器中间有空格：后代选择器
+			 */
+			/* .div1{width: 30px;height: 30px;background: blue;} */
+			/* .div2{width: 50px;height: 50px;background: green;} */
+			/*多类选择器:css中没空格，html中使用有空格 */
+			/* 一起写 */
+			.div1.div2 {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+
+			/* 分开写 */
+			.div3 {
+				width: 100px;
+				height: 100px;
+			}
+
+			.div4 {
+				background-color: green;
+			}
+
+			/*后代选择器：css中有空格，html中是后代*/
+			.div1 .div2 {
+				width: 100px;
+				height: 100px;
+				background: yellow;
+			}
+
+			/*后代选择器 + 多类选择器组合使用：*/
+			.div5 .div6 {
+				width: 200px;
+				height: 100px;
+
+			}
+			.div5 .div7 {
+
+				background: purple;
+			}
 		</style>
 	</head>
 	<body>
@@ -127,6 +167,15 @@
 		<p class="before">我要添加前缀</p>
 		<p class="after">我要添加后缀</p>
 		<p lang="it">我的lang属性是 ‘it’，我是黄色</p>
-
+		<p>多类选择器</p>
+		<div class="div1 div2"></div>
+		<div class="div3 div4"></div>
+		<p>后代选择器</p>
+		<div class="div1">
+			<div class="div2"></div>
+		</div>
+		<div class="div5">
+			<div class="div6 div7"></div>
+		</div>
 	</body>
 </html>
