@@ -1,19 +1,55 @@
 /*
 值类型(基本类型)：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol。
-引用数据类型：对象(Object)、数组(Array)、函数(Function)。
+引用数据类型：狭义的对象(Object)、数组(Array)、函数(Function)。
 */
+// 判断数据类型的方法；1，typeof；2，instanceof；3，Object.prototype.toString方法
 function baseData() {
 	var x1; // x1 为 undefined
 	var x2 = 5; //  x2 为数字
 	var x3 = "John"; //  x3 为字符串
 	var x4 = true; //  x4 为bool
 	var x5 = null; //  x5 为null
-	console.log('undefined类型✅' + x1);
+	var x6 = [1, '4', '', null];
+	var x7 = {
+		a: 5
+	};
+	console.log('undefined类型✅' + typeof(x1));
 	console.log('数字类型✅' + x2);
 	console.log('字符串类型✅' + x3);
 	console.log('布尔类型✅' + x4);
 	console.log('null类型✅' + x5);
+	// 函数类型
+	console.log('函数类型✅' + typeof(arrayData));
+	// typeof显示的数组类型也是object
+	// instanceof可以判断具体是否是数组，还是对象
+	console.log('数组类型✅' + typeof(x6));
+	console.log('数组类型✅' + (x6 instanceof Array));
+	console.log('数组类型✅' + (x6 instanceof Object));
+	// 对象类型
+	console.log('对象类型✅' + typeof(x7));
+	console.log('对象类型✅' + (x7 instanceof Array));
+	console.log('对象类型✅' + (x7 instanceof Object));
 }
+
+function testNull() {
+	// null是一个表示“空”的对象，转为数值时为0；
+	// undefined是一个表示"此处无定义"的原始值，转为数值时为NaN
+	console.log(Number(null));
+	console.log(Number(undefined));
+	
+	// 以下6个值，默认转换成false，其他均为true
+	// 注意，空数组（[]）和空对象（{}）对应的布尔值，都是true
+	/*
+		undefined
+		null
+		false
+		0
+		NaN
+		""或''（空字符串）
+	*/
+
+}
+
 
 // 创建数组
 function arrayData() {
@@ -104,7 +140,7 @@ function arrayData4() {
 	var result = ary.map((value, key) => {
 		return value + '_runoob.com';
 	})
-	
+
 	// 数组排序
 
 }
