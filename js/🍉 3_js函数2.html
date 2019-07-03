@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="5_js函数2.js"></script>
+		<title></title>
+		<style>
+			.button {
+				background-color: yellowgreen;
+				border: none;
+				color: mediumvioletred;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				margin: 4px 2px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="button"  onclick="console.log(f1(1,2))">1，function声明函数</button>
+		<button class="button"  onclick="console.log(f2(2,2))">2，function字面量声明函数</button>
+		<button class="button"  onclick="console.log(f3(3,2))">3，Function构造函数声明函数</button>
+		<button class="button"  onclick="f4()">4，普通函数调用</button>
+		<button class="button"  onclick="f5()">5，对象方法函数调用</button>
+		<button class="button"  onclick="f6()">6，构造函数调用</button>
+		<button class="button"  onclick="f7()">7，上下文的调用</button>
+	</body>
+</html>

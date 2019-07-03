@@ -5,5 +5,26 @@
 		<title></title>
 	</head>
 	<body>
+		<div id="demo1">
+			demo1
+		</div>
+		<div id="demo2">
+			demo2
+		</div>
+		
 	</body>
 </html>
+<script type="text/javascript">
+	var txt1=document.getElementById("demo1");
+	txt1.style.background = 'red';
+	var txt2=document.getElementById("demo2");
+	txt2.setAttribute('background','green');
+
+	// 将document.getElementById写成函数
+	// var getById=document.getElementById;
+	var getById = function () {
+    //显式的设置document.getElementById函数内部的this绑定到document对象
+    return document.getElementById.apply(document,arguments)
+};
+	console.log(getById("demo1"));
+</script>
