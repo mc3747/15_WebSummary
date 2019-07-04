@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box" title="我是标题" xxx="我是xxx">我是div</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oDiv = document.getElementsByClassName("box")[0];
+	var obj = {
+			name: "文顶顶",
+			age: 18
+		},
+		arr = [1, 2, 3];
+
+	/*01-检查对象类型-typeof*/
+	console.log(typeof obj, typeof arr, typeof oDiv); //object object object
+
+	/*02-检查对象类型-toString()   返回值 [对象类型  构造函数]*/
+	console.log({}.toString.call(obj)); //[object Object]
+	console.log({}.toString.call(arr)); //[object Array]
+	console.log({}.toString.call(oDiv)); //[object HTMLDivElement]
+
+	/*03-对象的访问 增删改查操作*/
+	console.log(oDiv.wendingding); //undefined
+
+	/*03-A 添加*/
+	oDiv.wendingding = "文顶顶"; //增加wendingding属性
+	oDiv.name = "测试的名字"; //增加logName属性
+	/*03-B 查询*/
+	console.log(oDiv.wendingding); //"文顶顶"
+	/*03-C 修改*/
+	oDiv.wendingding = "光头强";
+	console.log(oDiv.wendingding); //光头强
+	/*03-D 删除*/
+	console.log(delete oDiv.wendingding); //true
+	console.log(oDiv.wendingding); //undefined
+
+	/*03-E 在div对象身上添加并调用方法*/
+	oDiv.logName = function() {
+		console.log("logName() => " + this.name);
+	}
+	oDiv.logName(); //"logName() =>测试的名字"
+</script>

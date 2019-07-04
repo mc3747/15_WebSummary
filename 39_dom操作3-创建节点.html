@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	
+/*节点创建的相关方法
+ * [1] document.createElement(type)          创建元素节点
+ * [2] document.createTextNode(text)         创建文本节点
+ * [3] document.createAttribute()            创建属性节点
+ *
+ * 节点插入的相关方法
+ * [1]  ele.appendChild(node)              把node插入到ele子节点的末尾
+ * [2]  ele.insertBefore(newNode,node)     在ele的子节点node前插入新的子节点newNode
+ * [3]  ele.setAttributeNode(attrNode)     在指定元素中插入属性节点
+ * 
+ * 节点的属性
+ * nodeType 获取节点的类型，元素为1，属性为2，文本为3
+ * nodeName 获取节点的名称，元素节点返回大写标签名，属性节点返回属性名，文本节点返回#text
+ * nodeValue获取节点的值，元素节点固定返回 null，属性节点返回属性值，文本节点直接返回内容
+ * */
+  // 🍉 基本写法
+  /*01-创建div标签并插入到页面中*/
+ var oDiv = document.createElement("div");
+
+ /*02-给div创建文本节点*/
+ var oText = document.createTextNode("滴答滴答~");
+ 
+ /*03-把文本节点插入到div中*/
+ oDiv.appendChild(oText);
+
+ /*04-创建test属性节点*/
+ var oAttr = document.createAttribute("test");
+ 
+ /*05-设置属性节点的值*/
+ oAttr.nodeValue = "test的value";
+ 
+ /*06-把属性节点设置到div标签中*/
+ oDiv.setAttributeNode(oAttr);
+
+ /*07-创建span元素节点*/
+ var oSpan = document.createElement("span");
+ 
+ /*08-把span标签插入到oDiv里文本节点的前面*/
+ oDiv.insertBefore(oSpan,oText);
+
+ /*09-把div标签插入到body子节点的末尾*/
+ document.body.appendChild(oDiv);
+ console.log(oDiv);
+ 
+ /*备注：测试各种类型node的nodeType、nodeName和nodeValue属性*/
+ /*备注：nodeName和tagName是等价的，均为全部大写的标签名(类型)*/
+ console.log("元素节点-oSpan.nodeType = " +oSpan.nodeType);  //oSpan.nodeType = 1
+ console.log("属性节点-oAttr.nodeType = " +oAttr.nodeType);  //oAttr.nodeType = 2
+ console.log("文本节点-oText.nodeType = " +oText.nodeType);  //oText.nodeType = 3
+ 
+ console.log("元素节点-oSpan.nodeName = " +oSpan.nodeName);  //oSpan.nodeName = SPAN
+ console.log("属性节点-oAttr.nodeType = " +oAttr.nodeName);  //oAttr.nodeType = test
+ console.log("文本节点-oText.nodeName = " +oText.nodeName);  //oText.nodeName = #text
+ 
+ console.log("元素节点-oSpan.nodeValue =" +oSpan.nodeValue);//oSpan.nodeValue = null
+ console.log("属性节点-oAttr.nodeValue =" +oAttr.nodeValue);//oAttr.nodeValue = test的value
+ console.log("文本节点-oText.nodeValue =" +oText.nodeValue);//oText.nodeValue = 滴答滴答~
+ 
+ // 🍉 使用innerText属性来简化了创建文本节点并插入的操作
+/*01-创建div标签并插入到页面中*/
+var oDiv1 = document.createElement("div");
+
+/*02-创建文本节点并插入*/
+oDiv1.innerText = "滴滴答答~dda";
+
+/*03-创建属性及节点并设置后插入*/
+oDiv1.setAttribute("test1","test的value值");
+// oDiv1.setAttribute("backgroundColor","red");
+
+/*04-创建span元素节点*/
+var oSpen1 = document.createElement("span");
+
+/*05-把span标签插入到div中文本节点前*/
+oDiv1.insertBefore(oSpen1,oDiv1.childNodes[0]);
+
+/*06-把div标签插入到body子节点的末尾*/
+document.body.appendChild(oDiv1);
+console.log(oDiv1);
+
+// 🍉 使用innerHTML属性来完成了设置div标签子节点工作
+/*01-创建div标签并插入到页面中*/
+var oDiv2 = document.createElement("div");
+
+/*02-设置标签的节点和属性内容*/
+oDiv2.innerHTML = "<span></span>滴滴答答~KKK";
+
+/*03-设置div标签的属性节点*/
+oDiv2.setAttribute("test2","test的value值");
+oDiv2.setAttribute('style','color:blue');
+
+/*04-把div标签插入到body子节点的末尾*/
+document.body.appendChild(oDiv2);
+console.log(oDiv2);
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<li>测试1</li>
+			<li>测试2</li>
+		</div>
+		<div class="box1" name="test">box1-1</div>
+		<div class="box1">box1-2</div>
+		<form action="" name="formTest"></form>
+	</body>
+</html>
+<script type="text/javascript">
+/*获取元素节点的方法
+	 * [1] document.getElementById(id)     通过id来获取标签(1)
+	 * [2] getElementsByTagName(tagname)   通过标签名称来获取标签(n)
+	 * [3] getElementsByClassName()        通过class来获取标签(n)
+	 * [4] document.getElementsByName()    通过name属性节点来获取标签(n)
+	 * [5] querySelector()和querySelectorAll()方法
+	 * */
+
+	var oDiv = document.getElementById("box"); //div#box
+	var oDivs = document.getElementsByClassName("box1"); //[box1,box1]
+
+	/*提示：直接在已有标签内部查找，速度更快*/
+	var oLis = oDiv.getElementsByTagName("li"); //[li,li]
+	var oDivN = document.getElementsByName("test") //[div.box1]
+	console.log(oDiv);
+	console.log(oDivs);
+	console.log(oLis);
+	console.log(oDivN);
+/*获取元素节点的方法
+</script>

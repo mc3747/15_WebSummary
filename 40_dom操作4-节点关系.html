@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<span>我是spanA</span>
+			<span class="span-class">我是spanB</span>
+			我是div标签的文本
+			<span>我是spanC</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/* 父节点：parentNode
+	 * 父元素：parentElement
+	 *
+	 * 子节点：childNodes firstChild          lastChild
+	 * 子元素：children   firstElementChild   lastElementChild
+	 *
+	 * 兄弟节点：previousSibling           nextSibling
+	 * 兄弟元素：previousElementSibling    nextElementSibling
+	 */
+
+	/*01-获取外层的div标签*/
+	var oDiv = document.getElementById("box");
+
+	/*02-对比子节点和子元素*/
+	console.log(oDiv.childNodes); //NodeList(7)
+	console.log(oDiv.children); //HTMLCollection(3)
+
+	console.log(oDiv.firstChild); //#text
+	console.log(oDiv.firstElementChild); //<span>我是spanA</span>
+
+	console.log(oDiv.lastChild); //#text
+	console.log(oDiv.lastElementChild); //<span>我是spanC</span>
+
+	/*03-对比兄弟节点和兄弟元素*/
+	var oSpan = document.getElementsByClassName("span-class")[0];
+	console.log(oSpan.previousSibling); //#text
+	console.log(oSpan.previousElementSibling); //<span>我是spanA</span>
+
+	console.log(oSpan.nextSibling); //我是div标签的文本
+	console.log(oSpan.nextElementSibling); //<span>我是spanC</span>
+</script>
