@@ -22,6 +22,7 @@
 	/*02-设置标签的样式*/
 	oDiv.style.color = "red"; //设置标签内文字颜色(前景色)
 	oDiv.setAttribute('style','background:orange');
+	
 	/*B 操作标签的样式(包括内联样式)*/
 	console.log(window.getComputedStyle(oDiv).border); //1px solid rgb(15, 15, 15)
 	console.log(window.getComputedStyle(oDiv).color); //rgb(255, 0, 0)
