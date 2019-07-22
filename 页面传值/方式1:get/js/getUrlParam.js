@@ -1,3 +1,9 @@
+/*
+UrlParam .param(‘参数’) 如果页面间传递的key无重复 获取单个值 
+UrlParam .paramValues(‘参数’)如果页面间传递的key有重复 得到一个数组 
+UrlParam .hasParam(‘参数’)判断参数是否存在 
+UrlParam .paramMap（）得到所有参数的对象
+*/
 UrlParam = function() { // url参数 
 	var data, index;
 	(function init() {
