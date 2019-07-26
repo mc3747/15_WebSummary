@@ -1,23 +1,18 @@
-//✅，1，原型对象 
-//01 声明构造函数Person
+// 在构造函数被创建出来的时候，系统会默认帮构造函数创建并关联一个Object类型的新对象，我们称该对象就是这个构造函数的原型对象，构造函数的原型对象默认是一个空对象。Person.prototype访问其原型对象
+//✅，1，原型对象的定义
 function Person(name) {
 	this.name = name;
 }
-
-//02 打印构造函数相关联的原型对象
 console.log(Person.prototype);  //Objec类型的空对象
-
-//03 给构造函数原型对象添加方法
 Person.prototype.showName = function () {
 	console.log(this.name);
 };
-
-//04 使用构造函数创建实例对象
+// 使用构造函数创建实例对象
 var p = new Person("文顶顶");
 p.showName();       //文顶顶
 console.log(p);
 
- //✅，2，获取原型对象的方式
+ //✅，2，原型对象的获取方式
 //01 构造函数访问原型对象：构造函数.prototype
 console.log(Person.prototype);
 
@@ -28,23 +23,18 @@ console.log(p.__proto__ == Person.prototype);
 //03 通过Object.getPrototypeOf方法传递实例对象作为参数访问
 console.log(Object.getPrototypeOf(p));
 
-//✅，3，设置原型对象：方案1① 利用对象的动态特性设置
- //01 声明构造函数Person
+//✅，3，设置原型对象
+// 🍎方案1① 利用对象的动态特性设置
 function Person1(name,age) {
 	this.name = name;
 	this.age = age || 18;
 }
-
-//02 给构造函数原型对象添加方法
-//设置原型对象的第一种方法
 Person1.prototype.showName = function () {
 	console.log("姓名 "+this.name);
 };
 Person1.prototype.showAge = function () {
 	console.log("年龄 "+this.age);
 };
-
-//04 使用构造函数创建实例对象
 var p1 = new Person1("文顶顶");
 p1.showName();       //姓名 文顶顶
 p1.showAge();        //年龄 18
@@ -53,14 +43,11 @@ var p2 = new Person1("章飞一绝",99);
 p2.showName();       //姓名 章飞一绝
 p2.showAge();        //年龄 99
 
-//✅，4，设置原型对象：方案2② 替换原有的原型对象
-//01 声明构造函数Person
+//🍎方案2② 替换原有的原型对象
 function Person3(name,age) {
 	this.name = name;
 	this.age = age || 18;
 }
-
-//02 给构造函数原型对象添加方法
 //设置原型对象的第二种方法：直接替换原先的原型对象
 /*
 注意 如果是直接替换原型对象，那么需要修正构造器属性，让constructor指向构造函数。
@@ -76,7 +63,7 @@ Person3.prototype = {
 	}
 };
 
-//04 使用构造函数创建实例对象
+// 使用构造函数创建实例对象
 var p = new Person3("文顶顶rr");
 p.showName();       //姓名 文顶顶
 p.showAge();        //年龄 18
