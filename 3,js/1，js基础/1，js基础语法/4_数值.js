@@ -35,8 +35,47 @@ console.log(Math.sqrt(-1));
 
 //	3,Infinity:表示“无穷”，Infinity表示正的无穷，-Infinity表示负的无穷
 	
-//5，✅与数值相关的全局方法
-//1，parseInt()
+//5，✅与数值相关的全局方法:
+//1，parseInt()：字符串转成整数
+	//返回值只有两种可能，要么是一个十进制整数，要么是NaN
+console.log(parseInt('8a'));
+	//接收2个参数，第二个表示进制
+console.log(parseInt('1000', 2));
+
 //2，parseFloat()
-//3，isNaN()
-//4，isFinite()
+//用于将一个字符串转为浮点数
+//parseFloat会将空字符串转为NaN
+//parseFloat和Number函数的区别
+console.log(parseFloat(true))  // NaN
+console.log(Number(true)) // 1
+
+console.log(parseFloat(null)) // NaN
+console.log(Number(null)) // 0
+
+console.log(parseFloat('')) // NaN
+console.log(Number('')) // 0
+
+console.log(parseFloat('123.45#')) // 123.45
+console.log(Number('123.45#')) // NaN
+
+//3，isNaN()：可以用来判断一个值是否为NaN
+//使用isNaN之前，最好判断一下数据类型:以下有两种方法
+function myIsNaN1(value) {
+	return typeof value === 'number' && isNaN(value);
+}
+console.log(myIsNaN1('333'));
+
+//判断是否是NaN:NaN为唯一不等于自身的值的这个特点
+function myIsNaN2(value) {
+	return value !== value;
+}
+console.log(myIsNaN2(NaN));
+
+//4，isFinite():方法返回一个布尔值，表示某个值是否为正常的数值
+//除了Infinity、-Infinity、NaN和undefined这几个值会返回false，isFinite对于其他的数值都会返回true
+console.log(isFinite(Infinity)) // false
+console.log(isFinite(-Infinity)) // false
+console.log(isFinite(NaN)) // false
+console.log(isFinite(undefined)) // false
+console.log(isFinite(null)) // true
+console.log(isFinite(-1)) // true
