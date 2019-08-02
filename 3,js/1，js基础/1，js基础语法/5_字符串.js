@@ -231,9 +231,13 @@ console.log('utf-16转utf-8：' + utf16ToUtf8('严'));
 
 ////✅ 9，Base64 转码
 //所谓 Base64 就是一种编码方法，可以将任意值转成 0～9、A～Z、a-z、+和/这64个字符组成的可打印字符
+//js用window.atob
+//node.js用 先安装包 atob,，然后引用const atob = require('atob');
 
 //btoa()：任意值转为 Base64 编码
 var string1 = 'Hello World!';
-console.log(btoa(string1)); // "SGVsbG8gV29ybGQh"
+//console.log(window.btoa(string1)); // "SGVsbG8gV29ybGQh"
 
 //atob()：Base64 编码转为原来的值
+//console.log(atob('SGVsbG8gV29ybGQh')); // "Hello World!"
+
