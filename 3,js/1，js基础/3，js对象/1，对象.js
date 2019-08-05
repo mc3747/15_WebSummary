@@ -18,7 +18,8 @@ var obj2 = {name:"wendingding",age:18};
 console.log(obj2);
 
 // 3, 内置构造函数
-/*String
+/*
+String
 Number
 Boolean
 Date

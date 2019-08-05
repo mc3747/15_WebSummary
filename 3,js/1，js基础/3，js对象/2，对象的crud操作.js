@@ -1,3 +1,4 @@
+
 //✅对象的操作：增删改查
 	//通过字面量方式创建obj对象，该对象现在拥有name属性和showName方法
 	//因使用字面量方式创建，所有obj的原型对象(__proto__)指向object.prototype
