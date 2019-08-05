@@ -115,7 +115,7 @@ for (var i = 0; i < arguments.length; i++) {
 	args.push(arguments[i]);
 }
 
-//2，arguments对象带有一个callee属性，返回它所对应的原函数
+//3，arguments对象带有一个callee属性，返回它所对应的原函数
 var f8 = function () {
 	console.log(arguments.callee === f8);
 }
