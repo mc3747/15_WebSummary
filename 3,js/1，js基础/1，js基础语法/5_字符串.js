@@ -27,6 +27,15 @@ console.log(s[0]);
 console.log('hello' [0]);
 
 //✅4，ASCII码：8位从00000000到11111111，ASCII 码一共规定了128个字符的编码
+/*
+ASCII码和整型的根本区别就是所占位数不一样，
+ASCII码：1个字节
+整型：至少2个字节
+*/
+console.log(0b01000001);
+console.log(String.fromCharCode(0b01000001));
+console.log(0b0000000001000001);
+
 //字符串转ascii
 var str = 'abcd';
 var codeValue = str.charCodeAt(0);
