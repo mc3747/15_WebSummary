@@ -81,3 +81,35 @@ o2.f()
 
 	o3.f()
 //6，避免回调函数中的 this
+
+//✅，绑定this的方法
+//1，实例函数的call方法
+var n4 = 123;
+var obj4 = { n4: 456 };
+
+function a4() {
+	console.log(this.n4);
+}
+a4();
+a4.call(obj4) 
+
+//2，实例函数的apply方法
+
+//3，实例函数的bind方法:用于将函数体内的this绑定到某个对象，然后返回一个新函数
+var counter = {
+	count: 0,
+	inc: function () {
+		this.count++;
+	}
+};
+//绑定counter对象
+var func1 = counter.inc.bind(counter);
+func1();
+console.log(counter.count) // 100
+//绑定obj5对象
+var obj5 = {
+	count: 100
+};
+var func2 = counter.inc.bind(obj5);
+func2();
+console.log(obj5.count) // 101
