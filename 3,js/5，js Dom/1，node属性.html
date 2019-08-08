@@ -1,0 +1,87 @@
+<!-- 
+🍎dom树：都继承了Node
+Document：整个文档树的顶层节点
+DocumentType：doctype标签（比如<!DOCTYPE html>）
+Element：网页的各种HTML标签（比如<body>、<a>等）
+Attribute：网页元素的属性（比如class="right"）
+Text：标签之间或标签包含的文本
+Comment：注释
+DocumentFragment：文档的片段
+
+🍎d节点都有三种层级关系。
+父节点关系（parentNode）：直接的那个上级节点
+子节点关系（childNodes）：直接的下级节点
+同级节点关系（sibling）：拥有同一个父节点的节点
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d1">测试节点名称</div>
+		<div id="d2">
+			<span>测试内容</span>
+			嘎嘎噶
+			</div>
+	</body>
+</html>
+<script type="text/javascript">
+// ✅，Node.prototype.nodeType:节点的类型
+/*
+文档节点（document）：9，对应常量Node.DOCUMENT_NODE
+元素节点（element）：1，对应常量Node.ELEMENT_NODE
+属性节点（attr）：2，对应常量Node.ATTRIBUTE_NODE
+文本节点（text）：3，对应常量Node.TEXT_NODE
+文档片断节点（DocumentFragment）：11，对应常量Node.DOCUMENT_FRAGMENT_NODE
+文档类型节点（DocumentType）：10，对应常量Node.DOCUMENT_TYPE_NODE
+注释节点（Comment）：8，对应常量Node.COMMENT_NODE
+*/
+console.log(document.nodeType)
+
+//✅， Node.prototype.nodeName:返回节点的名称
+/*
+文档节点（document）：#document
+元素节点（element）：大写的标签名
+属性节点（attr）：属性的名称
+文本节点（text）：#text
+文档片断节点（DocumentFragment）：#document-fragment
+文档类型节点（DocumentType）：文档的类型
+注释节点（Comment）：#comment
+*/ 
+var div1 = document.getElementById('d1');
+console.log(div1.nodeName )
+
+//✅，Node.prototype.nodeValue:返回一个字符串，表示当前节点本身的文本值，该属性可读写
+/*
+只有文本节点（text）、注释节点（comment）和属性节点（attr）有文本值，
+因此这三类节点的nodeValue可以返回结果，其他类型的节点一律返回null
+*/ 
+console.log(div1.nodeValue)
+console.log(div1.firstChild.nodeValue)
+
+//✅， Node.prototype.textContent:返回当前节点和它的所有后代节点的文本内容
+console.log(document.getElementById('d2').textContent)
+
+//✅， Node.prototype.baseURI:返回一个字符串，表示当前网页的绝对路径。浏览器根据这个属性，计算网页上的相对路径的 URL。该属性为只读
+// encodeURI和encodeURIComponent:URI字符串采用UTF-8编码格式转化成escape格式的字符
+// decodeURI和decodeURIComponent:把URI字符串采用URF-8编码格式转化成escape格式的字符串
+console.log(decodeURIComponent(document.baseURI))
+
+//✅， Node.prototype.ownerDocument:返回当前节点所在的顶层文档对象，即document对象
+
+//✅， Node.prototype.nextSibling:返回紧跟在当前节点后面的第一个同级节点。如果当前节点后面没有同级节点
+//✅， Node.prototype.previousSibling:回当前节点前面的、距离最近的一个同级节点
+
+//✅， Node.prototype.parentNode:当前节点的父节点
+
+//✅， Node.prototype.parentElement:当前节点的父元素节点
+
+//✅， Node.prototype.firstChild，Node.prototype.lastChild：第一个子节点
+
+//✅， Node.prototype.childNodes:似数组的对象（NodeList集合），成员包括当前节点的所有子节点
+
+//✅， Node.prototype.isConnected:返回一个布尔值，表示当前节点是否在文档之中
+
+</script>

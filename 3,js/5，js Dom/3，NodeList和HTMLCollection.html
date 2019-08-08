@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
+		<title></title>
+	</head>
+	<body>
+		<div id="test1">
+			我收demo1
+		</div>
+		 <img id="pic" src="http://image.zhangxinxu.com/image/study/s/s256/mm4.jpg" width="80" height="80">
+	</body>
+</html>
+<script type="text/javascript">
+	// ✅,NodeList:所有节点对象
+	/*
+	1，Node.childNodes
+		document.querySelectorAll()等节点搜索方法
+	2，NodeList 实例children不是数组，但是具有length属性和forEach方法
+	3，使用数组方法，可以将其转为真正的数组
+		var children = document.body.childNodes;
+		var nodeArr = Array.prototype.slice.call(children);
+	*/ 
+   
+   console.log(document.body.childNodes instanceof NodeList);
+   // 所有body的节点
+   var children = document.body.childNodes;
+   console.log(children);
+   // 所有的div
+   console.log(document.querySelectorAll('div').length);
+   // item()索引
+   // forEach()方法
+   // keys(),values(),entries()返回三种遍历器
+   
+   	// ✅,HTMLCollection:只有元素节点
+	/*
+	主要是一些Document对象的集合属性，比如document.links、document.forms、document.images等
+	*/ 
+	console.log(document.images instanceof HTMLCollection);
+	console.log(document.links.length);
+	// item()方法
+	// length方法
+	// namedItem方法
+	
+	var pic = document.getElementById('pic');
+	console.log(document.images.namedItem('pic') === pic)
+</script>
