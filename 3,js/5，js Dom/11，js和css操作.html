@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.div1{
+					background-color:red; 
+				border:1px solid black;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id="div1" class="div1">
+			我是div1
+		</div>
+
+	</body>
+</html>
+<script type="text/javascript">
+// 🍎 1，js修改元素的style
+	// var div1 = document.getElementById('div1');
+	// div1.setAttribute(
+	// 'style',	
+	// 'background-color:yellow;' + 'border:1px solid blue;'
+	// );
+	
+// 🍎 2，CSSStyleDeclaration 接口
+/*
+1，元素节点的style属性（Element.style）
+2，CSSStyle实例的style属性
+3，window.getComputedStyle()的返回值
+*/
+// 1,获取元素的.style(css横杠变驼峰)
+// var divStyle1 = document.querySelector('div').style;
+// divStyle1.backgroundColor = 'green'
+
+// 2,获取元素的.cssText(css横杠不变)
+// var divStyle2 = document.querySelector('div').style;
+// divStyle2.cssText = 'background-color: red;'
+//   + 'border: 1px solid black;'
+//   + 'height: 100px;'
+//   + 'width: 100px;';
+
+ // 3,获取元素样式的方法:setProperty
+  var divStyle3 = document.querySelector('div').style;
+  divStyle3.setProperty('background-color', 'blue');
+  
+  
+</script>
