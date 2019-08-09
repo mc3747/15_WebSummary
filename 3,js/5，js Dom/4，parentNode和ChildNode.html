@@ -7,3 +7,35 @@
 	<body>
 	</body>
 </html>
+<script type="text/javascript">
+// ✅ ParentNode 接口
+	/*
+	只有元素节点（element）、文档节点（document）和文档片段节点（documentFragment）拥有子节点，
+	因此只有这三类节点会继承ParentNode接口
+	*/ 
+// ParentNode.children:前节点的所有元素子节点。该属性只读
+
+// ParentNode.firstElementChild:当前节点的第一个元素子节点
+
+// ParentNode.lastElementChild:当前节点的最后一个元素子节点
+
+// ParentNode.childElementCount:当前节点的所有元素子节点的数目
+
+// ParentNode.append()，ParentNode.prepend()
+/*
+append方法为当前节点追加一个或多个子节点，位置是最后一个元素子节点的后面。
+prepend方法为当前节点追加一个或多个子节点，位置是第一个元素子节点的前面
+*/ 
+
+
+// ✅ ChildNode 接口:如果一个节点有父节点，那么该节点就继承了ChildNode接口
+// ChildNode.remove():从父节点移除当前节点
+
+// ChildNode.before()，ChildNode.after()
+/*
+before方法用于在当前节点的前面，插入一个或多个同级节点
+after方法用于在当前节点的后面，插入一个或多个同级节点
+*/ 
+
+// ChildNode.replaceWith():replaceWith方法使用参数节点，替换当前节点
+</script>
