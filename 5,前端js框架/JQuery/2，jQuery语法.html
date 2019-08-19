@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<p>如果你点我，我就会消失。</p>
+		<p>点我消失!</p>
+	</body>
+
+</html>
+
+<script type="text/javascript">
+	/*
+				✅ 1，选择器：
+				1，元素选择器： 	$("button")
+				2，id 选择器：	$("#test")
+				3，class 选择器： $(".test")
+				其他：
+				$("#id", ".class")  复合选择器
+				$(div p span)       层级选择器 //div下的p元素中的span元素
+				$(div>p)            父子选择器 //div下的所有p元素
+				$(div+p)            相邻元素选择器 //div后面的p元素(仅一个p)
+				$(div~p)            兄弟选择器  //div后面的所有p元素(同级别)
+				$(.p:last)          类选择器 加 过滤选择器  第一个和最后一个（first 或者 last）
+				$("#mytable td:odd")      层级选择 加 过滤选择器 奇偶（odd 或者 even）
+				$("div p:eq(2)")    索引选择器 div下的第三个p元素（索引是从0开始）
+				$("a[href='www.baidu.com']")  属性选择器
+				$("p:contains(test)")        // 内容过滤选择器，包含text内容的p元素
+				$(":emtyp")        //内容过滤选择器，所有空标签（不包含子标签和内容的标签）parent 相反
+				$(":hidden")       //所有隐藏元素 visible 
+				$("input:enabled") //选取所有启用的表单元素
+				$(":disabled")     //所有不可用的元素
+				$("input:checked") //获取所有选中的复选框单选按钮等
+				$("select option:selected") //获取选中的选项元素
+				
+				 ✅ 2，事件：
+				 1，$(document).ready()
+				 2，click()
+				 3，dblclick()
+				 4，mouseenter()：鼠标通过
+				 5，mouseleave()：鼠标离开
+				 6，mousedown()：鼠标按下
+				 7，mouseup()：鼠标松开
+				 8，hover()：悬停
+				 9，focus()：获取焦点
+				 10，blur()：失去焦点
+				*/
+
+	$(document).ready(function() {
+		$("p").click(function() {
+			$(this).hide();
+		});
+	});
+</script>
