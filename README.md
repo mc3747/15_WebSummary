@@ -1,6 +1,37 @@
 # 15_WebSummary
 web前端总结，html，css，js等小练习
 
+参考：阮一峰，MDN，菜鸟教程
+思路：整个前端脉络：https://github.com/qianguyihao/Web
+	王平安的js基础总结：https://mp.weixin.qq.com/s/9pWZWetEf9icwS6RaINfsw
+	桌面总结的源码
+	
+第三遍学习：
+	重点概念
+	设计模式
+	数据结构
+	后端案例：wap交互；pc端代码
+    
+第三遍产出：  
+	在线简历模板
+        搭建个人博客
+        新建网站
+        后台管理系统
+        移动端纯web
+
+第四遍：
+node.js
+typeScript
+服务器：mac本地阿帕奇服务器 + mysql
+		xampp网络服务器软件
+		node.js + 云端服务器
+		服务器有： 阿帕奇 、TOMCAT 、IIS
+        
+第四遍产出
+    接口文档
+    接口测试
+    服务端搭建
+    
 html：
 div
 p
