@@ -1,0 +1,24 @@
+1，变量提升和函数提升
+2，js数据类型
+3，js函数的写法（普通，变量，构造，箭头函数（不能使用构造函数new，不能使用arguments参数，不能使用yield命令用作Generator函数），this指向总为当前对象），
+	函数的默认属性：this，arguments（callee属性，与数组关系），length，name，rest(3点)
+	函数默认方法：toString，apply，call，bind
+	函数递归,闭包,尾调用，立即调用表达式
+	eval命令
+	
+4，js对象的写法
+	创建对象的方法：字面量，new object，构造函数，es6（属性的简洁表示）
+	访问属性：点，中括号 
+	
+	枚举属性：for in；Object.keys；Object.getOwnPropertyNames(o)
+	对象的默认属性：
+	对象的默认方法
+	
+5，js数组，set
+6，map
+7，json
+8，js的异步处理
+9，元编程：reflect和proxy
+
+9，字符串，正则，时间
+

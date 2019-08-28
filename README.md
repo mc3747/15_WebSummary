@@ -3,8 +3,11 @@ web前端总结，html，css，js等小练习
 
 参考：阮一峰，MDN，菜鸟教程
 思路：整个前端脉络：https://github.com/qianguyihao/Web
-	王平安的js基础总结：https://mp.weixin.qq.com/s/9pWZWetEf9icwS6RaINfsw
+	王平安的微信js基础总结：https://mp.weixin.qq.com/s/9pWZWetEf9icwS6RaINfsw
+    王平安的网站js：http://js.pingan8787.com
+	30秒js高级写法总结：https://www.30secondsofcode.org/list
 	桌面总结的源码
+        腾讯课堂：老马的视频
 	
 第三遍学习：
 	重点概念
