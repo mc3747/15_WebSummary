@@ -81,3 +81,99 @@ let demo3 = new class {
 }('张三');
 
 demo3.sayName(); // "张三"
+
+//✅this指向的绑定：class 内部是严格模式
+//方法1：利用bind绑定class内部的this 
+//class Logger1 {
+//	constructor() {
+//		//	绑定printName方法1
+//		this.printName = this.printName.bind(this);
+//	}
+//	
+//	printName(name = 'there') {
+//		this.print(`Hello ${name}`);
+//	}
+//
+//	print(text) {
+//		console.log(text);
+//	}
+//}
+//const logger1 = new Logger1();
+//const {printName} = logger1;
+//printName('a');
+
+//方法2：利用箭头函数绑定class内部的this 
+//class Logger2 {
+//	constructor() {
+//		//	绑定printName方法2
+//		this.printName = (name = 'there') => {
+//		 this.print(`Hello ${name}`);
+//		 };
+//	}
+//
+//	print(text) {
+//		console.log(text);
+//	}
+//}
+//const logger2 = new Logger2();
+//const {printName} = logger2;
+//printName('a');
+
+//方法3：利用Proxy绑定class内部的this 
+class Logger3 {
+	printName(name = 'there') {
+		this.print(`Hello ${name}`);
+	}
+
+	print(text) {
+		console.log(text);
+	}
+}
+function selfish (target) {
+	const cache = new WeakMap();
+	const handler = {
+		get (target, key) {
+			const value = Reflect.get(target, key);
+			if (typeof value !== 'function') {
+				return value;
+			}
+			if (!cache.has(value)) {
+				cache.set(value, value.bind(target));
+			}
+			return cache.get(value);
+		}
+	};
+	const proxy = new Proxy(target, handler);
+	return proxy;
+}
+
+const logger3 = selfish(new Logger3());
+const {printName} = logger3;
+printName('b');
+
+//✅静态方法static：类似于类方法
+//如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，可以类继承，这就称为“静态方法”
+//如果静态方法包含this关键字，这个this指的是类，而不是实例
+class Foo2 {
+	static classMethod() {
+		return 'hello';
+	}
+}
+
+console.log(Foo2.classMethod()) // 'hello'
+
+//class中私有方法的封装
+/*
+1，命名区分，带下划线为私有（还是可以访问）
+2，私有方法移出模块
+3，利用Symbol值的唯一性
+*/
+//私有方法移出模块
+class Widget {
+	foo (baz) {
+		bar.call(this, baz);
+	}
+}
+function bar(baz) {
+	return this.snaf = baz;
+}
