@@ -101,3 +101,10 @@ const arr18 = _arr.reduce((t, c) => {
 }, []);
 console.log(arr17,arr18);
 // arr => [4]
+
+
+//13，删除数组的某一个元素
+/*
+splice(index,len,[item]) 
+splice有3个参数，它也可以用来替换/删除/添加数组内某一个或者几个值
+*/
