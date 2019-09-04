@@ -20,14 +20,22 @@ newArray.forEach((item,index,array)=>{
 	newObject.urlDes = item.match(/<li><strong>(\S*)<\/strong>/)[1];
 //	url	
 	newObject.urlName = item.match(/https:\/\/IP:PORT\/(\S*)<\/p>/)[1];
+	
 //	urlId：将描述进行md5
 	newObject.urlId = md5(newObject.urlDes);
 //	内容	
-	// newObject.content = item;
+	newObject.content = item;
 // 	是否是app	
 	newObject.isApp = true;
 // 	是否是wx
 	newObject.isWX = false;
 	resultArray.push(newObject);
 });
+// console.log(resultArray);
+// 需要去掉转义的
 console.log(JSON.stringify(resultArray));
+
+// let jsonString = JSON.stringify(resultArray);
+// jsonString = jsonString.replace(/\\/g, '');
+// console.log(jsonString);
+
