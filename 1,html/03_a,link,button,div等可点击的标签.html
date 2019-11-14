@@ -3,6 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<style type="text/css">
+			div.test:active{
+				background-color: #0000FF;
+			}
+		</style>
 	</head>
 	<body>
 		<!-- 1,a标签 
@@ -32,9 +37,11 @@
 		  -->
 
 		<div id="divDemo" onclick="divClick()" onmousedown="buttonStartClick(this)" onmouseup='buttonEndClick(this)'>
-			div的点击
+			div的点击（事件）
 		</div>
-
+		<div class="test">
+			div的点击（伪类实现）
+		</div>
 		<button type="button" onclick="buttonClick()" >button的点击</button>
 
 		<input type="button" name="" id="inputDemo" value="input的点击" onclick="inputClick()" />
