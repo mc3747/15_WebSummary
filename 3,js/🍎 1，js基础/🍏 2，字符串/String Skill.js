@@ -6,7 +6,6 @@ console.log(overtime);
 
 
 //2，格式化金钱：千分位
-
 const money = parseToMoney1(20190214.99);
 console.log(money);
 // 方法1：数组

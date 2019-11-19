@@ -49,7 +49,7 @@ arr9 = [0].concat(arr9);
 //arr9 = [0, ...arr];
 console.log(arr9);
 
-//✅ 10，数组尾部插入成员
+//✅ 10，数组尾部插入成员：
 let arr10 = [0, 1]; 
 //方法1
 //arr10.push(2);
@@ -103,13 +103,13 @@ console.log(arr17,arr18);
 // arr => [4]
 
 
-//13，删除数组的某一个元素（已知下标）
+//✅13，删除数组的某一个元素（已知下标）
 /*
 splice(index,len,[item]) 
 splice有3个参数，它也可以用来替换/删除/添加数组内某一个或者几个值
 */
 
-//14，删除数组的某一个元素（未知下标）
+//✅14，删除数组的某一个元素（未知下标）
 Array.prototype.indexOf = function (val) {
  for(var i = 0; i < this.length; i++){
 	if(this[i] == val){return i;}
@@ -125,7 +125,7 @@ console.log('删除前'+temp);
 temp.remove(12);
 console.log('删除后'+temp);
 
-//15，判断某个元素是否在数组中
+//✅15，判断某个元素是否在数组中
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 //方法1： arr.indexOf(某元素)：未找到则返回 -1。 
 var a = fruits.indexOf("Apple");  // 2
@@ -169,3 +169,4 @@ function isInArray3(arr,value){
 	return false;
 }
 
+//✅16，数组遍历
