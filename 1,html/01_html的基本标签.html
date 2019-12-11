@@ -1,108 +1,134 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
-	</head>
-	<body>
-		<!-- 1，基本标签 -->
-		<h1>最大的标题</h1>
-		<h2> . . . </h2>
-		<h3> . . . </h3>
-		<h4> . . . </h4>
-		<h5> . . . </h5>
-		<h6>最小的标题</h6>
 
-		<p>这是一个段落。</p>
-		<br> （换行）
-		<hr> （水平线）
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
 
-		<!-- 2，格式化标签 -->
-		<b>粗体文本</b>
-		<code>计算机代码</code>
-		<em>强调文本</em>
-		<i>斜体文本</i>
-		<kbd>键盘输入</kbd>
-		<pre>预格式化文本</pre>
-		<small>更小的文本</small>
-		<strong>重要的文本</strong>
-		<abbr> （缩写）</abbr>
-		<address> （联系信息）</address>
-		<bdo> （文字方向）</bdo>
-		<blockquote> （从另一个源引用的部分）</blockquote>
-		<cite> （工作的名称）</cite>
-		<del> （删除的文本）</del>
-		<ins> （插入的文本）</ins>
-		<sub> （下标文本）</sub>
-		<sup> （上标文本）</sup>
+<body>
+    <!-- 1，基本标签 -->
+    <h1>最大的标题</h1>
+    <h2> . . . </h2>
+    <h3> . . . </h3>
+    <h4> . . . </h4>
+    <h5> . . . </h5>
+    <h6>最小的标题</h6>
 
-		<!-- 3，链接 -->
-		普通的链接：<a href="http://www.example.com/">链接文本</a>
-		图像链接： <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
-		邮件链接： <a href="mailto:webmaster@example.com">发送e-mail</a>
-		书签：
-		<a id="tips">提示部分</a>
-		<a href="#tips">跳到提示部分</a>
+    <p>这是一个段落。</p>
+    <br> （换行）
+    <hr> （水平线）
 
-		<!-- 4，区块 -->
-		<style type="text/css">
-			h1 {
-				color: red;
-			}
+    <!-- 2，格式化标签 -->
+    <b>粗体文本</b>
+    <code>计算机代码</code>
+    <em>强调文本</em>
+    <i>斜体文本</i>
+    <kbd>键盘输入</kbd>
+    <pre>预格式化文本</pre>
+    <small>更小的文本</small>
+    <strong>重要的文本</strong>
+    <abbr> （缩写）</abbr>
+    <address> （联系信息）</address>
+    <bdo> （文字方向）</bdo>
+    <blockquote> （从另一个源引用的部分）</blockquote>
+    <cite> （工作的名称）</cite>
+    <del> （删除的文本）</del>
+    <ins> （插入的文本）</ins>
+    <sub> （下标文本）</sub>
+    <sup> （上标文本）</sup>
 
-			p {
-				color: blue;
-			}
-		</style>
-		<div>文档中的块级元素</div>
-		<span>文档中的内联元素</span>
-		<!-- 5，列表表格 -->
-		<!-- 无序列表 -->
-		<ul>
-			<li>项目</li>
-			<li>项目</li>
-		</ul>
-		<!-- 有序列表 -->
-		<ol>
-			<li>第一项</li>
-			<li>第二项</li>
-		</ol>
-		<!-- 定义列表 -->
-		<dl>
-			<dt>项目 1</dt>
-			<dd>描述项目 1</dd>
-			<dt>项目 2</dt>
-			<dd>描述项目 2</dd>
-		</dl>
-		<!-- 表格 -->
-		<table border="1">
-			<tr>
-				<th>表格标题</th>
-				<th>表格标题</th>
-			</tr>
-			<tr>
-				<td>表格数据</td>
-				<td>表格数据</td>
-			</tr>
-		</table>
+    <!-- 3，链接 -->
+    普通的链接：<a href="http://www.example.com/">链接文本</a>
+    图像链接： <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
+    邮件链接： <a href="mailto:webmaster@example.com">发送e-mail</a>
+    书签：
+    <a id="tips">提示部分</a>
+    <a href="#tips">跳到提示部分</a>
+    <!-- 
+            ⚠️1，假链接：
+                <a href="#">：点击后回到顶部
+                <a href="javascript：">：点击后没有反应
+            ⚠️2，跳转到指定标签：指定标签要标明id
+                <a href="#center">跳转到中部</a>
+                <h2 id="center">我是中部</h2>
+         -->
 
-		<!-- 7，表单 -->
-		<form action="demo_form.php" method="post/get">
-			<input type="text" name="email" size="40" maxlength="50">
-			<input type="password">
-			<input type="checkbox" checked="checked">
-			<input type="radio" checked="checked">
-			<input type="submit" value="Send">
-			<input type="reset">
-			<input type="hidden">
-			<select>
-				<option>苹果</option>
-				<option selected="selected">香蕉</option>
-				<option>樱桃</option>
-			</select>
-			<textarea name="comment" rows="60" cols="20"></textarea>
+    <!-- 4，区块 -->
+    <style type="text/css">
+        h1 {
+            color: red;
+        }
 
-		</form>
-	</body>
+        p {
+            color: blue;
+        }
+    </style>
+    <div>文档中的块级元素</div>
+    <span>文档中的内联元素</span>
+    <em></em>
+    <!-- 5，列表表格 -->
+    <!-- 
+        ⚠️1，ul和ol，紧跟的只能是li，而li可以再跟其他
+
+     -->
+    <!-- 无序列表
+        ul：unordered list 
+        li：其实是英文list item的缩写
+    -->
+    <ul>
+        <li>项目</li>
+        <li>项目</li>
+    </ul>
+    <!-- 有序列表
+        ol：ordered list
+        li：其实是英文list item的缩写
+    -->
+    <ol>
+        <li>第一项</li>
+        <li>第二项</li>
+    </ol>
+    <!-- 定义列表
+        dl：definition list 
+        dt：definition title的缩写, 所以dt的含义就是用来定义列表中的标题
+        dd：definition description的缩写, 所以dd的含义就是用来定义标题对应的描述的
+    -->
+    <dl>
+        <dt>项目 1</dt>
+        <dd>描述项目 1</dd>
+        <dt>项目 2</dt>
+        <dd>描述项目 2</dd>
+    </dl>
+    <!-- 表格 -->
+    <table border="1">
+        <tr>
+            <th>表格标题</th>
+            <th>表格标题</th>
+        </tr>
+        <tr>
+            <td>表格数据</td>
+            <td>表格数据</td>
+        </tr>
+    </table>
+
+    <!-- 7，表单 -->
+    <form action="demo_form.php" method="post/get">
+        <input type="text" name="email" size="40" maxlength="50">
+        <input type="password">
+        <input type="checkbox" checked="checked">
+        <input type="radio" checked="checked">
+        <input type="submit" value="Send">
+        <input type="reset">
+        <input type="hidden">
+        <select>
+            <option>苹果</option>
+            <option selected="selected">香蕉</option>
+            <option>樱桃</option>
+        </select>
+        <textarea name="comment" rows="60" cols="20"></textarea>
+
+    </form>
+</body>
+
 </html>
