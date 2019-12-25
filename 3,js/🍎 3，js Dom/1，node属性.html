@@ -38,7 +38,7 @@ DocumentFragment：文档的片段
 文档类型节点（DocumentType）：10，对应常量Node.DOCUMENT_TYPE_NODE
 注释节点（Comment）：8，对应常量Node.COMMENT_NODE
 */
-console.log(document.nodeType)
+console.log('节点类型'+document.nodeType)
 
 //✅， Node.prototype.nodeName:返回节点的名称
 /*
@@ -51,15 +51,15 @@ console.log(document.nodeType)
 注释节点（Comment）：#comment
 */ 
 var div1 = document.getElementById('d1');
-console.log(div1.nodeName )
+console.log('节点名称'+div1.nodeName )
 
 //✅，Node.prototype.nodeValue:返回一个字符串，表示当前节点本身的文本值，该属性可读写
 /*
 只有文本节点（text）、注释节点（comment）和属性节点（attr）有文本值，
 因此这三类节点的nodeValue可以返回结果，其他类型的节点一律返回null
 */ 
-console.log(div1.nodeValue)
-console.log(div1.firstChild.nodeValue)
+console.log('节点文本'+div1.nodeValue)
+console.log('节点文本'+div1.firstChild.nodeValue)
 
 //✅， Node.prototype.textContent:返回当前节点和它的所有后代节点的文本内容
 console.log(document.getElementById('d2').textContent)
