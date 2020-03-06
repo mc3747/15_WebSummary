@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'itlike';
+  src:  url('../fonts/icomoon.eot?sq012j');
+  src:  url('../fonts/icomoon.eot?sq012j#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?sq012j') format('truetype'),
+    url('../fonts/icomoon.woff?sq012j') format('woff'),
+    url('../fonts/icomoon.svg?sq012j#icomoon') format('svg');
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="itlike-"],
+[class*=" itlike-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'itlike' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.itlike-settings:before {
+  content: "\e900";
+}
+.itlike-course:before {
+  content: "\e901";
+}
+.itlike-home3:before {
+  content: "\e902";
+}
+.itlike-music:before {
+  content: "\e911";
+}
+.itlike-play:before {
+  content: "\e912";
+}
+.itlike-film:before {
+  content: "\e913";
+}
+.itlike-video-camera:before {
+  content: "\e914";
+}
+.itlike-dice:before {
+  content: "\e915";
+}
+.itlike-files-empty:before {
+  content: "\e925";
+}
+.itlike-folder-upload:before {
+  content: "\e934";
+}
+.itlike-phone-hang-up:before {
+  content: "\e943";
+}

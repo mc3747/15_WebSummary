@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .par {
+            border: 5px solid rgb(91, 243, 30);
+            width: 300px;
+
+            /* 1,清除子盒子,撑不起父盒子的情况 */
+            overflow: hidden;
+        }
+
+        .child {
+            border: 5px solid rgb(233, 250, 84);
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .left {
+            width: 100px;
+            height: 150px;
+            float: left;
+            background: rgb(139, 214, 78);
+            text-align: center;
+            line-height: 150px;
+            font-size: 20px;
+        }
+
+        .right {
+            /* 2,自动适应两栏布局 */
+            overflow: hidden;
+            height: 300px;
+            background: rgb(170, 54, 236);
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px;
+        }
+
+        /* 3,属于同一个BFC的两个相邻的Box会发生margin重叠 */
+        .div1 {
+            color: #f55;
+            background: yellow;
+            width: 200px;
+            line-height: 100px;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .div2 {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="par">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <div>
+        <div class="left">LEFT</div>
+        <div class="right">RIGHT</div>
+    </div>
+    <div>
+        <div class="div1">看看我的 margin是多少</div>
+        <div class="div2">
+            <div class="div1">看看我的 margin是多少</div>
+        </div>
+    </div>
+</body>
+
+</html>

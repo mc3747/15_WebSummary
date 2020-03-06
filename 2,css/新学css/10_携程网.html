@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*头部:弹性布局,图片可点击*/
+        #header {
+            width: 100%;
+            display: flex;
+        }
+
+        #header>a {
+            flex: 1;
+        }
+
+        #header>a>img {
+            width: 100%;
+        }
+
+        /*内容*/
+        #content {
+            width: 100%;
+            padding: 0 10px;
+            /*background-color: purple;*/
+
+            box-sizing: border-box;
+        }
+
+        #content>.item {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            margin-top: 10px;
+
+            display: flex;
+        }
+
+        #content>.item:nth-child(1) {
+            background-color: red;
+        }
+
+        #content>.item:nth-child(2) {
+            background-color: green;
+        }
+
+        #content>.item:nth-child(3) {
+            background-color: blue;
+        }
+
+        #content>.item:nth-child(4) {
+            background-color: purple;
+        }
+
+        #content>.item>.left {
+            flex: 1;
+        }
+
+        #content>.item>.right {
+            flex: 2;
+            display: flex;
+            /*换行*/
+            flex-wrap: wrap;
+        }
+
+        #content>.item>.right>a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 50%;
+            color: #fff;
+            text-decoration: none;
+
+            /*边框*/
+            box-sizing: border-box;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+
+        #content>.item>.right>a:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        #content>.extra {
+            width: 100%;
+            display: flex;
+        }
+
+        #content>.extra>a {
+            flex: 1;
+        }
+
+        #content>.extra>a>img {
+            width: 100%;
+        }
+
+        /*尾部*/
+        #footer {
+            width: 100%;
+        }
+
+        #footer>.nav {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            display: flex;
+        }
+
+        #footer>.nav>a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: #666;
+        }
+
+        #footer>.link {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        #footer>.copy {
+            margin: 5px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--头部-->
+        <header id="header">
+            <a href="#"><img src="image/banner.png" alt=""></a>
+        </header>
+
+        <!--中间-->
+        <main id="content">
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="#">海外酒店</a>
+                    <a href="#">团购</a>
+                    <a href="#">特价机票</a>
+                    <a href="#">民宿客栈</a>
+                </div>
+            </section>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="#">海外酒店</a>
+                    <a href="#">团购</a>
+                    <a href="#">特价机票</a>
+                    <a href="#">民宿客栈</a>
+                </div>
+            </section>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="#">海外酒店</a>
+                    <a href="#">团购</a>
+                    <a href="#">特价机票</a>
+                    <a href="#">民宿客栈</a>
+                </div>
+            </section>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="#">海外酒店</a>
+                    <a href="#">团购</a>
+                    <a href="#">特价机票</a>
+                    <a href="#">民宿客栈</a>
+                </div>
+            </section>
+            <section class="extra">
+                <a href="#"><img src="image/extra_1.jpg" alt=""></a>
+                <a href="#"><img src="image/extra_2.jpg" alt=""></a>
+            </section>
+        </main>
+        <!--尾部-->
+        <footer id="footer">
+            <nav class="nav">
+                <a href="#">电话预定</a>
+                <a href="#">下载客户端</a>
+                <a href="#">我的</a>
+            </nav>
+            <div class="link">
+                <a href="">网站地图</a>
+                <a href="">English</a>
+                <a href="">电脑版</a>
+            </div>
+            <div class="copy">
+                © 携程旅行
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
