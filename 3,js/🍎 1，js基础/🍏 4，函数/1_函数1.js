@@ -51,9 +51,10 @@ console.log(b());
 
 //⚽️函数的默认属性
 /*
-4，name函数名称
-3，length参数个数
-1，this
+1，name函数名称
+2，length参数个数
+3，this
+4, argument
 */
 
 //✅name属性:匿名函数为变量；有名函数为名称
@@ -77,7 +78,7 @@ console.log(f4.length);
 3，call
 */
 
-//✅toString：函数的源码
+	//✅toString：函数的源码
 function f5(a, b) {
 //	我是注释
 }

@@ -50,7 +50,6 @@ function testNull() {
 
 }
 
-
 // 创建数组
 function arrayData() {
 	// 1,常规方式
