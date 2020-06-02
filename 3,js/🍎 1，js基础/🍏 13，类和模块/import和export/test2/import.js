@@ -27,5 +27,5 @@ import {crc32} from 'crc32'; // 输入
 // import aa from './export.js'
 // aa();
 
-import DefaultString from './export.js';
-console.log(DefaultString)
+// import DefaultString from './export.js';
+// console.log(DefaultString)

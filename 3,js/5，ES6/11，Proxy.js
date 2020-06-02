@@ -12,3 +12,13 @@ var obj = new Proxy({}, {
 obj.count = 1
 obj.count = 2
 ++obj.count
+
+/**
+ * 拦截方法：
+get方法
+set方法
+apply方法
+has方法
+construct方法
+deleteProperty方法
+ *  */
